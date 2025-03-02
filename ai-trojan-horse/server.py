@@ -7,41 +7,32 @@ import json
 import time
 import re
 
-# Load environment variables from .env file
 load_dotenv()
 
-# Configure Google Gemini API
 genai.configure(api_key=os.getenv("GOOGLE_GEMINI_API_KEY"))
 
 app = Flask(__name__)
-CORS(app)  # Allow frontend to access API
+CORS(app)  
 
-# 🔹 File to store active threats persistently
 THREATS_FILE = "threats.json"
 
-# 🔹 Load active threats from file (if exists)
 def load_threats():
-    """Load threats from a JSON file."""
     if os.path.exists(THREATS_FILE):
         try:
             with open(THREATS_FILE, "r") as file:
-                return json.load(file)  # ✅ Load and return existing threats
+                return json.load(file)  
         except json.JSONDecodeError:
-            print("⚠️ Warning: JSON file is corrupted. Starting fresh.")
-            return {}  # Return empty dict if file is corrupt
-    return {}  # Return empty dict if file doesn't exist
+            print("Warning: JSON file is corrupted. Starting fresh.")
+            return {}  
+    return {}  
 
-# 🔹 Save active threats to file
 def save_threats():
-    """Save active threats to a JSON file."""
     with open(THREATS_FILE, "w") as file:
         json.dump(active_threats, file, indent=2)
 
-# Load existing threats at startup
 active_threats = load_threats()
 
 def generate_active_threats():
-    """Generates AI-powered malware threats & saves them to file."""
     global active_threats
     model = genai.GenerativeModel("gemini-1.5-flash")
 
@@ -71,49 +62,47 @@ def generate_active_threats():
             "\nRespond ONLY with valid JSON output. Do NOT include explanations, titles, or extra text."
         )
 
-        # 🔹 Debugging: Print AI Response Before Parsing
         print("\n🔍 Raw AI Response:\n", response.text)
 
-        # ✅ Remove potential markdown formatting from API response
+    
         cleaned_response = re.sub(r"```json|```", "", response.text).strip()
 
-        # ✅ Parse the cleaned response as JSON
+     
         threats_list = json.loads(cleaned_response)
 
         if isinstance(threats_list, list):
             active_threats = {threat["file_name"]: threat for threat in threats_list}
-            save_threats()  # ✅ Save threats to file
-            print("\n✅ Successfully stored threats:", active_threats)
+            save_threats()  
+            print("\n XD Successfully stored threats:", active_threats)
         else:
-            print("\n❌ Error: AI did not return a valid list.")
+            print("\n :0 Error: AI did not return a valid list.")
             active_threats = {}
 
     except json.JSONDecodeError as e:
-        print(f"\n❌ JSON Parsing Error: {e}")
-        print("\n🔍 AI Response (Before Parsing):", response.text)
+        print(f"\n :0 JSON Parsing Error: {e}")
+        print("\n AI Response (Before Parsing):", response.text)
         active_threats = {}
 
     except Exception as e:
-        print(f"\n❌ API Request Failed: {e}")
-        active_threats = {}  # Reset if API request fails
+        print(f"\n :0 API Request Failed: {e}")
+        active_threats = {}  #reset
 
         
 @app.route('/api/live-threat-feed', methods=['GET'])
 def get_live_threat_feed():
     global active_threats
 
-    # ✅ Generate threats only if the list is empty (prevents re-generation)
+    #FIX LATER
     if not active_threats:
-        print("\n🔄 Generating threats for the first and only time...\n")
+        print("\n Generating threats for the first and only time...\n")
         generate_active_threats()
 
-    # ✅ Print active threats before returning
-    print("\n🛡️ Active Threats:", json.dumps(active_threats, indent=2))
+   
+    print("\n Active Threats:", json.dumps(active_threats, indent=2))
 
     return jsonify({"active_threats": list(active_threats.values())})
 
 
-# API Endpoint: Retrieve details of a specific malware threat
 @app.route('/api/threat-details/<file_name>', methods=['GET'])
 def get_threat_details(file_name):
     if file_name in active_threats:
@@ -123,3 +112,7 @@ def get_threat_details(file_name):
 
 if __name__ == '__main__':
     app.run(debug=True)
+
+
+
+
