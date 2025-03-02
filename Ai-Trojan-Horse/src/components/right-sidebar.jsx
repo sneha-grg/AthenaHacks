@@ -6,15 +6,9 @@ const RightSidebar = () => {
     { name: "Quarantine File", icon: "🔒" },
     { name: "Delete Malware", icon: "🗑️" },
     { name: "Run Full Scan", icon: "🔍" },
-    // { name: "Strengthen Firewall", icon: "🛡️" },
-    // { name: "Block Sender", icon: "✋" },
-    // { name: "Report Phishing", icon: "⚠️" },
     { name: "Reset System", icon: "🔄" },
-    // { name: "Disable Macros", icon: "⚡" },
     { name: "Change Passwords", icon: "🔑" },
-    { name: "Enable MFA", icon: "🔐" },
-    // { name: "Disable Remote Access", icon: "🚫" },
-    // { name: "Rollback Changes", icon: "⏮️" }
+    { name: "Enable MFA", icon: "🔐" }
   ];
   
   const handleAction = (action) => {

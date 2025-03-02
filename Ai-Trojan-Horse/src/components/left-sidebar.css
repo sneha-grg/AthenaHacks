@@ -18,18 +18,6 @@
   box-shadow: 0 0 30px rgba(0, 247, 255, 0.2);
 }
 
-.glow-effect {
-  position: fixed;
-  top: 50%;
-  left: 140px;
-  width: 280px;
-  height: 100vh;
-  background: radial-gradient(circle, rgba(0, 247, 255, 0.1) 0%, transparent 70%);
-  transform: translate(-50%, -50%);
-  pointer-events: none;
-  z-index: 0;
-}
-
 .threat-title {
   font-family: 'Space Mono', monospace;
   color: #fff;
@@ -56,7 +44,6 @@
 }
 
 .threat-card:hover {
-  border-color: rgba(0, 247, 255, 0.5);
   box-shadow: 0 0 20px rgba(0, 247, 255, 0.2);
 }
 
@@ -82,7 +69,7 @@
 
 .threat-level.high {
   background: rgba(255, 59, 48, 0.2);
-  color: #ff3b30;
+  color: #e8392f;
 }
 
 .threat-level.critical {
@@ -115,11 +102,6 @@
   font-family: 'Space Mono', monospace;
 }
 
-.threat-capabilities {
-  border-top: 1px solid rgba(0, 247, 255, 0.1);
-  padding-top: 10px;
-}
-
 .capabilities-title {
   color: rgba(255, 255, 255, 0.6);
   font-size: 0.8rem;
@@ -141,9 +123,3 @@
   border-radius: 4px;
   font-family: 'Space Mono', monospace;
 }
-
-/* 
-.left-sidebar * {
-  color: rgba(255, 255, 255, 0.8);
-  font-family: 'Space Mono', monospace;
-} */

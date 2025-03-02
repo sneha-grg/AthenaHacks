@@ -23,7 +23,6 @@ const LeftSidebar = () => {
 
   return (
     <div className="left-sidebar">
-      <div className="glow-effect"></div>
       
       <h2 className="threat-title">Live Threats Feed</h2>
       
@@ -52,14 +51,12 @@ const LeftSidebar = () => {
               </div>
             </div>
 
-            <div className="threat-capabilities">
-              <div className="capabilities-title">Capabilities:</div>
+            <div className="capabilities-title">Capabilities:</div>
               <div className="capabilities-list">
                 {threat.capabilities.map((capability, index) => (
                   <div key={index} className="capability-tag">{capability}</div>
                 ))}
               </div>
-            </div>
           </div>
         ))}
       </div>
