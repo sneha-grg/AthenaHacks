@@ -6,13 +6,51 @@
   border-radius: 30px;
   display: flex;
   flex-direction: column;
-  gap: 30px;
-  border: 1px solid rgba(0, 247, 255, 0.1);
-  transition: all 0.3s ease;
+  gap: 20px;
+  border: 1px solid rgba(3, 227, 235, 0.223);
 }
 
-.right-sidebar:hover {
-  transform: translateY(-5px);
-  border-color: rgba(0, 247, 255, 0.5);
-  box-shadow: 0 0 30px rgba(0, 247, 255, 0.2);
+.action-panel {
+  font-family: 'Space Mono', monospace;
+  color: #fff;
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
+
+.defense-actions {
+  display: grid;
+  gap: 10px;
+  padding: 5px;
+}
+
+.defense-button {
+  background: rgba(28, 229, 135, 0.1);
+  border: 1px solid rgba(28, 229, 135, 0.3);
+  border-radius: 8px;
+  padding: 10px;
+  color: #fff;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  min-height: 70px;
+  justify-content: center;
+}
+
+.defense-button:hover {
+  background: rgba(28, 229, 135, 0.2);
+  border-color: rgba(28, 229, 135, 0.5);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(28, 229, 135, 0.2);
+}
+
+.action-icon {
+  font-size: 1.2rem;
 }
