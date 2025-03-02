@@ -1,0 +1,51 @@
+{
+  "malware_stealer.exe": {
+    "file_name": "malware_stealer.exe",
+    "size": "2.5 MB",
+    "threat_level": "High",
+    "detected_malware": "Trojan.Downloader.AgentTesla",
+    "execution": "Runs when file is opened.",
+    "capabilities": [
+      "Keylogging",
+      "Data exfiltration",
+      "Remote access"
+    ],
+    "system_impact": [
+      "Data loss",
+      "Financial loss",
+      "Privacy violation"
+    ]
+  },
+  "ransomware_encryptor.exe": {
+    "file_name": "ransomware_encryptor.exe",
+    "size": "1.2 MB",
+    "threat_level": "Critical",
+    "detected_malware": "Ransomware.Encoder.Ryuk",
+    "execution": "Runs automatically after a successful infection.",
+    "capabilities": [
+      "File encryption",
+      "Data destruction",
+      "Ransom note display"
+    ],
+    "system_impact": [
+      "Data loss",
+      "Financial loss",
+      "System unavailability"
+    ]
+  },
+  "crypto_miner.bat": {
+    "file_name": "crypto_miner.bat",
+    "size": "500 KB",
+    "threat_level": "Medium",
+    "detected_malware": "Miner.XMRig",
+    "execution": "Runs as a background process.",
+    "capabilities": [
+      "Cryptocurrency mining",
+      "CPU resource consumption"
+    ],
+    "system_impact": [
+      "System performance degradation",
+      "Increased electricity bills"
+    ]
+  }
+}
