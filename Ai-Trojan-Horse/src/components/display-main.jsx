@@ -28,6 +28,7 @@ const DisplayMain = () => {
         
         star.style.animationDelay = `${Math.random() * 2}s`
         
+        // newly created div appended to starsContainer
         starsContainer.appendChild(star)
       }
     }
@@ -36,15 +37,13 @@ const DisplayMain = () => {
   }, [])
 
   return (
-    <>
     <div className="display-main">
-      <h1 className="brand-white brand-mono-bold">
-        Ai Trojan Horse
-        <span className="brand-dot">.</span>
-      </h1>
       <div ref={starsRef} className="stars"></div>
+      <h1 className="brand-white brand-mono-bold">
+        AI Trojan Horse<span className="brand-dot">.</span>
+      </h1>
+      <div className="subtitle">Welcome to greek-mythology inspired cyber realm</div>
     </div>
-    </>
   )
 }
 

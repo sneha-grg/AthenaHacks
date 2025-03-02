@@ -1,13 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
+
 .display-main {
   flex: 1;
   position: relative;
   min-height: 100vh;
   background: linear-gradient(180deg, #041325 0%, #000000 100%);
-  padding: 20px;
+  padding: 30px;
   border-radius: 30px;
   overflow: hidden;
 }
 
+.brand-mono-bold {
+  font-family: 'Space Mono', monospace;
+  font-weight: 700;
+  /* font-size: 3.5rem;
+  margin-bottom: 1rem;
+  text-align: center; */
+}
+
+.subtitle {
+  color: #00f7ff;
+  font-family: 'Space Mono', monospace;
+  font-size: 1.2rem;
+  margin-bottom: 3rem;
+  opacity: 0.8;
+}
+
+.brand-white { color: #fff; }
+.brand-dot { color: #ffd700; }
+
+/* Stars Effect */
 .stars {
   position: absolute;
   top: 0;
@@ -15,6 +37,7 @@
   width: 100%;
   height: 100%;
   pointer-events: none;
+  z-index: 0;
 }
 
 .star {
@@ -25,39 +48,7 @@
   animation: twinkle 1.5s ease-in-out infinite;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
-
-.brand-mono-bold {
-  font-family: 'Space Mono', monospace;
-  font-weight: 700;
-  /* font-size: 3rem; */
-  margin-top: 2rem;
-  margin-left: 2rem;
-}
-
-.brand-white {
-  color: #fff;
-}
-
-.brand-dot {
-  color: #ffd700;
-}
-
-h1 {
-  letter-spacing: 2px;
-}
-
 @keyframes twinkle {
-  0% {
-    opacity: 0.3;
-    transform: scale(0.8);
-  }
-  50% {
-    opacity: 1;
-    transform: scale(1);
-  }
-  100% {
-    opacity: 0.3;
-    transform: scale(0.8);
-  }
+  0%, 100% { opacity: 0.3; transform: scale(0.8); }
+  50% { opacity: 1; transform: scale(1); }
 }

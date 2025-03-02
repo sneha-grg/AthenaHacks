@@ -4,7 +4,7 @@ import './left-sidebar.css';
 const LeftSidebar = () => {
   return (
     <div className="left-sidebar">
-      {/* Content will be added later */}
+       <div className="glow-effect"></div>
     </div>
   );
 };
