@@ -1,7 +1,10 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import './display-main.css'
+import IntroScreen from './intro-screen'
 
 const DisplayMain = () => {
+  const [gameStarted, setGameStarted] = useState(false);
+  const [playerData, setPlayerData] = useState(null);
   const starsRef = useRef(null)
 
   useEffect(() => {
@@ -36,13 +39,28 @@ const DisplayMain = () => {
     createStars()
   }, [])
 
+  const handleStartGame = (formData) => {
+    setPlayerData(formData);
+    setGameStarted(true);
+  };
+
   return (
     <div className="display-main">
       <div ref={starsRef} className="stars"></div>
-      <h1 className="brand-white brand-mono-bold">
-        AI Trojan Horse<span className="brand-dot">.</span>
-      </h1>
-      <div className="subtitle">Welcome to greek-mythology inspired cyber realm</div>
+      
+      {!gameStarted ? (
+        <>
+          <h1 className="brand-white brand-mono-bold">
+            AI Trojan Horse<span className="brand-dot">.</span>
+          </h1>
+          <div className="subtitle">Welcome to greek-mythology inspired cyber realm</div>
+          <IntroScreen onStartGame={handleStartGame} />
+        </>
+      ) : (
+        <div className="game-content">
+          <h2>Welcome, {playerData.Name}!</h2>
+        </div>
+      )}
     </div>
   )
 }
