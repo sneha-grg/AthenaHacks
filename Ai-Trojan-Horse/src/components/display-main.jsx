@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react'
 import './display-main.css'
 import IntroScreen from './intro-screen'
+import GameScreen from './game-screen'
 
 const DisplayMain = () => {
   const [gameStarted, setGameStarted] = useState(false);
@@ -57,9 +58,12 @@ const DisplayMain = () => {
           <IntroScreen onStartGame={handleStartGame} />
         </>
       ) : (
+        <>
         <div className="game-content">
           <h2>Welcome, {playerData.Name}!</h2>
         </div>
+        <GameScreen playerName={playerData.Name} />
+        </>
       )}
     </div>
   )

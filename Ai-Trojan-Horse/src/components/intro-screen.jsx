@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './intro-screen.css';
+import { getNames } from '../LiveThreat';
 
 const IntroScreen = ({ onStartGame }) => {
   const [formData, setFormData] = useState({
@@ -14,13 +15,22 @@ const IntroScreen = ({ onStartGame }) => {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (formData.Name.trim()) {
       onStartGame(formData);
     }
+
+    try {
+      const response = await getNames(formData.Name); 
+      console.log("Backend Response:", response);
+    } catch (error) {
+      console.error("Error:", error);
+    }
+  
   };
 
+ 
   return (
     <div className="intro-container">
       <div className="intro-form-container">
