@@ -1,0 +1,57 @@
+.right-sidebar {
+  background: linear-gradient(180deg, #041325 0%, #000000 100%);
+  width: 280px;
+  height: 100vh;
+  padding: 20px;
+  border-radius: 30px;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgba(3, 227, 235, 0.223);
+  overflow-y: auto;
+}
+
+.action-panel {
+  font-family: 'Space Mono', monospace;
+  color: #fff;
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
+
+.defense-actions {
+  display: grid;
+  gap: 10px;
+  padding: 5px;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.defense-button {
+  background: rgba(28, 229, 135, 0.1);
+  border: 1px solid rgba(28, 229, 135, 0.3);
+  border-radius: 8px;
+  padding: 15px;
+  color: #fff;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  min-height: 70px;
+  justify-content: center;
+}
+
+.defense-button:hover {
+  background: rgba(28, 229, 135, 0.2);
+  border-color: rgba(28, 229, 135, 0.5);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(28, 229, 135, 0.2);
+}
+
+.action-icon {
+  font-size: 1.2rem;
+}

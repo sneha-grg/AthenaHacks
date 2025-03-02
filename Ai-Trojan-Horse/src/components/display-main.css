@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
+
+.display-main {
+  flex: 1;
+  position: relative;
+  min-height: 100vh;
+  background: linear-gradient(180deg, #041325 0%, #000000 100%);
+  padding: 30px;
+  border-radius: 30px;
+  overflow: hidden;
+}
+
+.brand-mono-bold {
+  font-family: 'Space Mono', monospace;
+  font-weight: 700;
+}
+
+.subtitle {
+  color: #00f7ff;
+  font-family: 'Space Mono', monospace;
+  font-size: 1.2rem;
+  margin-bottom: 3rem;
+  opacity: 0.8;
+}
+
+.brand-white { color: #fff; }
+.brand-dot { color: #ffd700; }
+
+/* Stars Effect */
+.stars {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.star {
+  position: absolute;
+  background: #00f7ff;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #00f7ff, 0 0 20px #00f7ff;
+  animation: twinkle 1.5s ease-in-out infinite;
+}
+
+.game-content {
+  color: #fff;
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.3; transform: scale(0.8); }
+  50% { opacity: 1; transform: scale(1); }
+}
