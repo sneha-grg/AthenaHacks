@@ -13,6 +13,15 @@ export const setLiveThreats = async () => {
     }
 };
 
+export const removeThreat = async (fileName) => {
+    try {
+        await axios.delete(`${BASE_URL}/api/remove-threat/${fileName}`);
+    } catch (error) {
+        console.error("Error removing threat:", error);
+        throw error;
+    }
+};
+
 export const getNames = async (name) => {
     try {
         const response = await axios.post(`${BASE_URL}/api/add-player`, { name }); // Use POST instead of GET

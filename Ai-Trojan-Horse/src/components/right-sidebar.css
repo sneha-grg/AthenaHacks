@@ -6,8 +6,8 @@
   border-radius: 30px;
   display: flex;
   flex-direction: column;
-  gap: 40px;
   border: 1px solid rgba(3, 227, 235, 0.223);
+  overflow-y: auto;
 }
 
 .action-panel {
@@ -24,6 +24,7 @@
   display: grid;
   gap: 10px;
   padding: 5px;
+  grid-template-columns: repeat(2, 1fr);
 }
 
 .defense-button {

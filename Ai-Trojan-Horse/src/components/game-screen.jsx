@@ -15,7 +15,7 @@ const GameScreen = ({ playerName }) => {
         const symptomsData = await setSystemSymptoms();
         const healthData = await setHealthBar();
         
-        setSymptoms(symptomsData.symptoms);
+        setSymptoms(symptomsData);
         setHealth(healthData);
       } catch (error) {
         console.error('Error fetching game data:', error);
