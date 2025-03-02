@@ -50,7 +50,7 @@ const IntroScreen = ({ onStartGame }) => {
             className="cyber-button"
             disabled={!formData.Name.trim()}
           >
-            <span className="button-text">⚡Defend Olympus ⚡</span>
+            <span className="button-text">⚡ Defend Olympus ⚡</span>
           </button>
         </form>
       </div>

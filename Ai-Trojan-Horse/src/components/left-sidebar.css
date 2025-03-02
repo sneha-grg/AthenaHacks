@@ -34,9 +34,9 @@
   font-family: 'Space Mono', monospace;
   color: #fff;
   font-size: 1.5rem;
-  margin-bottom: 1rem;
   position: relative;
   z-index: 1;
+  text-align: center;
 }
 
 .threats-container {
